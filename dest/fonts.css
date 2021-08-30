@@ -1,1 +1,77 @@
 /* FONT FACE - font-display: fallback; */
+/*Font primary - for text*/
+@font-face {
+    font-family: 'primary-regular';
+    src: url('../fonts/subset-Poppins-Regular.woff2') format('woff2'),
+    url('../fonts/subset-Poppins-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: fallback;
+}
+@font-face {
+    font-family: 'primary-medium';
+    src: url('../fonts/subset-Poppins-Medium.woff2') format('woff2'),
+    url('../fonts/subset-Poppins-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: fallback;
+}
+@font-face {
+    font-family: 'primary-semibold';
+    src: url('../fonts/subset-Poppins-SemiBold.woff2') format('woff2'),
+    url('../fonts/subset-Poppins-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: fallback;
+}
+@font-face {
+    font-family: 'primary-bold';
+    src: url('../fonts/subset-Poppins-Bold.woff2') format('woff2'),
+    url('../fonts/subset-Poppins-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: fallback;
+}
+@font-face {
+    font-family: 'primary-italic';
+    src: url('../fonts/subset-Poppins-Italic.woff2') format('woff2'),
+    url('../fonts/subset-Poppins-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+/*Font secondary - for title*/
+@font-face {
+    font-family: 'secondary-regular';
+    src: url('../fonts/subset-PlayfairDisplay-Regular.woff2') format('woff2'),
+    url('../fonts/subset-PlayfairDisplay-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: fallback;
+}
+@font-face {
+    font-family: 'secondary-medium';
+    src: url('../fonts/subset-PlayfairDisplay-Medium.woff2') format('woff2'),
+    url('../fonts/subset-PlayfairDisplay-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: fallback;
+}
+@font-face {
+    font-family: 'secondary-bold';
+    src: url('../fonts/subset-Poppins-Bold.woff2') format('woff2'),
+    url('../fonts/subset-Poppins-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: fallback;
+}
+@font-face {
+    font-family: 'secondary-italic';
+    src: url('../fonts/subset-PlayfairDisplay-Italic.woff2') format('woff2'),
+    url('../fonts/subset-PlayfairDisplay-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
