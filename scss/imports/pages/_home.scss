@@ -1,1 +1,15 @@
 // CSS HOMEPAGE
+.mainwrapper {min-height:500vh;}
+.square {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 200px;
+  background: blue;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
