@@ -1,0 +1,9 @@
+.loading {
+  height:100vh;
+  overflow:hidden;
+  position:relative;
+  &_background {
+    height:100%;
+    background:$text-cl;
+  }
+}
