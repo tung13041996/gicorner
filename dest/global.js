@@ -74,8 +74,9 @@ $(document).ready(function () {
         $oddLines = settings.wrapper.find('.line:nth-child(odd)');
         $evenLines = settings.wrapper.find('.line:nth-child(even)');
 
-
-        //move odd line to main screen
+        // first screen has background like main background
+        settings.wrapper.css("background-color","#fefaf9");
+        // move odd line to main screen
         // staggerFromTo (oddLine reverse, 0s, {x=-100%}, {x=0})
         timeline.staggerFromTo($oddLines.get().reverse(), settings.lineDuration,
             {x: '100%'},
