@@ -32,9 +32,9 @@ $container-gap:40px;
 
 /*GRID - media queries breakpoints*/
 $xxs-min: 480px;
-$xs-min: 768px;
-$sm-min: 1024px;
-$md-min: 1200px;
+$xs-min: 681px;
+$sm-min: 921px;
+$md-min: 1281px;
 $lg-min: 1600px;
 
 $xxs-max: ($xxs-min - 1); // Small Mobile
@@ -42,3 +42,4 @@ $xs-max: ($xs-min - 1); // Mobile
 $sm-max: ($sm-min - 1); // Tablet
 $md-max: ($md-min - 1); // Desktop
 $lg-max: ($lg-min - 1); // Large Desktop
+

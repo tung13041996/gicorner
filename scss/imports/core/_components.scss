@@ -1,1 +1,38 @@
-// css components
+// mouse
+.mouse {
+  &__round {
+    width:15px; height:15px;
+    border-radius:50%; border:1px solid #ccc;
+    position:absolute; top:0; left:0; z-index:10; pointer-events:none;
+  }
+  &__point {
+    width:8px; height:8px;
+    border-radius:50%; background:#7a7a7a;
+    position:absolute; top:0; left:0; z-index:11; pointer-events:none;
+    mix-blend-mode:difference;
+  }
+}
+
+/*button*/
+[class*="button_primary"] {
+  display:inline-flex; align-items:center; justify-content:center;
+  text-align:center; position:relative; overflow:hidden;
+  background:$secondary-cl; border:1px solid $primary-cl;
+  padding:5px 20px; min-height:50px; min-width:150px; border-radius:50px;
+  transition:$time-slow;
+  &:before {
+    content:""; display:block;
+    width:0; height:100%; background:$primary-cl;
+    position:absolute; top:0; right:0;
+    transition:$time-slow;
+  }
+  span {
+    position:relative;
+  }
+  &:hover {
+    color:#fff;
+  }
+  &:hover:before {
+    width:100%; left:0;
+  }
+}

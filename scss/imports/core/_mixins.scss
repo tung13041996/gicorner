@@ -6,26 +6,26 @@
 	}
 }
 // desktop
-@mixin md {
-	@media screen and (max-width: $md-max) {
+@mixin desktop {
+	@media only screen and (max-width: $md-max) {
+		@content;
+	}
+}
+// horizontal tablet
+@mixin horizontal-tablet {
+	@media only screen and (max-width: $sm-max) {
 		@content;
 	}
 }
 // tablet
-@mixin sm {
-	@media screen and (max-width: $sm-max) {
+@mixin tablet {
+	@media only screen and (max-width: $xs-max) {
 		@content;
 	}
 }
 // mobile
-@mixin xs {
-	@media screen and (max-width: $xs-max) {
-		@content;
-	}
-}
-// small mobile
-@mixin xxs {
-	@media (max-width: $xxs-max) {
+@mixin mobile {
+	@media only screen and (max-width: $xxs-max) {
 		@content;
 	}
 }

@@ -6,12 +6,79 @@
     height:100%;
     background:$text-cl;
   }
+
+  /*content*/
   &_content {
-    position:absolute;
-    top:0;
-    left:0;
-    bottom:0;
-    right:0;
+    @include mid(false);
+    width:100%;
+    text-align:center;
     color:$white-cl;
+
+    /*logo*/
+    &-logo {
+      margin-bottom:30px;
+      opacity:0;
+      pointer-events:none;
+      transform:translateY(-50px);
+    }
+    &-logo img {
+      width:500px;
+    }
+
+    /*text explore*/
+    &-explore {
+      overflow:hidden;
+      margin-bottom:15px;
+      &--wrapper {
+        transform:translateY(-100%);
+        h1 {
+          font-weight:500;
+        }
+        .text-unique {
+          font-size:100px;
+          font-family:"title", sans-serif;
+          line-height:.7;
+          color:$secondary-cl;
+        }
+      }
+    }
+
+    /*text button*/
+    &-button {
+      overflow:hidden;
+      &--wrapper {
+        transform:translateY(-100%);
+      }
+    }
+
+    /*animation*/
+    &.animation {
+      .loading_content-logo {
+        animation: animationTopBottom 2s ease forwards;
+      }
+      .loading_content-explore--wrapper {
+        animation: animationTopBottomOverflow 1.5s ease forwards;
+        animation-delay: 1.5s;
+      }
+      .loading_content-button--wrapper {
+        animation: animationTopBottomOverflow 1s ease forwards;
+        animation-delay: 3s;
+      }
+    }
+  }
+
+  @keyframes animationTopBottom {
+    0% {opacity:0; pointer-events:none; transform:translateY(-50px);}
+    100% {opacity:1; pointer-events:auto; transform:translateY(0);}
+  }
+  @keyframes animationTopBottomOverflow {
+    0% {transform:translateY(-100%);}
+    100% {transform:translateY(0);}
+  }
+  @include horizontal-tablet {
+    .loading_content-explore--wrapper .text-unique {font-size:80px;}
+  }
+  @include mobile {
+    .loading_content-explore--wrapper .text-unique {font-size:65px;}
   }
 }
