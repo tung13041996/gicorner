@@ -18,6 +18,8 @@ body {
     scroll-behavior: smooth;
     position: relative;
     cursor:none;
+    min-height:100vh;
+    overflow-x:hidden;
 
     a {
         cursor:none;
