@@ -3,7 +3,7 @@ $(document).ready(function () {
     let mouseMove = function() {
         // var
         const $mouseWrapper = $(".mouse");
-        let $link = $('[class*="button_"]'); //all hyperlink
+        let $link = $('a'); //all hyperlink
 
         $mouseWrapper.each(function() {
             const $mouseRound = $(this).find(".mouse__round"), //round shape move to mouse
