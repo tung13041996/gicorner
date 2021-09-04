@@ -54,25 +54,26 @@ nav {
                 visibility: hidden;
                 pointer-events: none;
                 overflow: hidden;
-                background: $primary-cl;
+                background: $white-cl;
                 border-radius: 5px;
-                border: 1px solid $primary-cl;
-
+                box-shadow:0 0 5px 0 rgba(0,0,0,.2);
                 li {
                   padding: 5px 25px;
                   text-align: center;
                   transition: $time;
+                  &.sub_menu-current-menu {
+                    background:$secondary-cl;
+                  }
+                  &:not(:last-child) {
+                    border-bottom: 1px solid rgba(112,112,112,.1);
+                  }
 
                   a {
                     font-size: 16px;
                     white-space: nowrap;
-                    color: $white-cl;
+                    color: $text-cl;
                     font-family: 'primary-regular', sans-serif;
                   }
-                }
-
-                li:not(:last-child) {
-                  border-bottom: 1px solid $white-cl;
                 }
               }
             }
@@ -84,13 +85,13 @@ nav {
             > li:hover {
               ul.sub_menu {
                 top: 100%;
-                opacity: 1;
-                visibility: visible;
-                pointer-events: auto;
-
-                &:hover {
-                  li:not(:hover) {
-                    opacity: .2;
+                opacity:1;
+                pointer-events:auto;
+                visibility:visible;
+                li:hover {
+                  background:$primary-cl;
+                  a {
+                    color:$white-cl;
                   }
                 }
               }
@@ -98,6 +99,9 @@ nav {
 
             /*current menu*/
             li.current-menu {
+              &:before {
+                color:$primary-cl;
+              }
               a {
                 font-family: 'primary-bold', sans-serif;
                 color: $primary-cl;
