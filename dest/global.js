@@ -127,8 +127,9 @@ $(document).ready(function () {
             },
         );
 
-        // hide wrapper
+        // hide wrapper and wrapper parent
         timeline.to(settings.wrapper, {autoAlpha: 0, duration: .3});
+        timeline.to(settings.wrapper.parent(), {autoAlpha: 0, duration: .3});
     }
 
 

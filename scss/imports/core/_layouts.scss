@@ -21,12 +21,20 @@ body {
     min-height:100vh;
     overflow-x:hidden;
 
-    a {
+    a, button {
         cursor:none;
         text-decoration:none;
         transition:$time;
         color:$text-cl;
     }
+
+    /* hide/show element */
+    .hidden {display:none;}
+    .show {display:block;}
+
+    /* Visibility Classes */
+    .hidden-mobile, .hidden-tablet, .hidden-tablet-h, .hidden-small-desktop {display:block;}
+    .show-mobile, .show-tablet, .show-tablet-h, .show-small-desktop {display:none;}
 
     h1, h2, h3, h4, h5, h6,
     .heading_h1, .heading_h2, .heading_h3, .heading_h4, .heading_h5, .heading_h6{
@@ -47,12 +55,20 @@ body {
         h1, .heading_h1 {font-size:45px;}
         h2, .heading_h2 {font-size:38px;}
         h3, .heading_h3 {font-size:30px;}
+
+        /*visibility Classes*/
+        .hidden-small-desktop {display:none;}
+        .show-small-desktop {display:block;}
     }
     @include horizontal-tablet {
         /*size*/
         h1, .heading_h1 {font-size:42px;}
         h2, .heading_h2 {font-size:35px;}
         h3, .heading_h3 {font-size:28px}
+
+        /*visibility Classes*/
+        .hidden-tablet-h {display:none;}
+        .show-tablet-h {display:block;}
     }
     @include tablet {
         /*size*/
@@ -60,6 +76,11 @@ body {
         h2, .heading_h2 {font-size:32px;}
         h3, .heading_h3 {font-size:24px;}
         h4, .heading_h4 {font-size:22px;}
+
+        /* Visibility Classes */
+        .hidden-tablet {display:none;}
+        .show-tablet {display:block;}
+
     }
     @include mobile{
         font-size:16px;
@@ -69,6 +90,10 @@ body {
         h4, .heading_h4 {font-size:20px;}
         h5, .heading_h5 {font-size:18px;}
         h6, .heading_h6 {font-size:16px;}
+
+        /* Visibility Classes */
+        .hidden-mobile {display:none;}
+        .show-mobile {display:block;}
     }
 
     .container {

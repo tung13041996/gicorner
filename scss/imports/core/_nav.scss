@@ -1,1 +1,163 @@
-// css navigator (Menu)
+// css navigator (Menu) desktop
+nav {
+  background: $white-cl;
+
+  .nav__desktop {
+    &-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: $header-height;
+
+      /*logo*/
+      .main__logo {
+        &-link {
+          display: block;
+          height: 65px;
+
+          img {
+            height: 100%;
+          }
+        }
+      }
+
+      /*main menu*/
+      .desktop__menu {
+        display: flex;
+        align-items: center;
+
+        .main_menu {
+          > ul {
+            display: flex;
+            align-items: center;
+
+            > li {
+              position: relative;
+
+              > a {
+                font-size: 18px;
+                font-weight: 500;
+              }
+
+              > a:hover {
+                color: $primary-cl;
+              }
+
+              ul.sub_menu {
+                position: absolute;
+                top: 0;
+                left: 50%;
+                min-width: 100%;
+                transform: translateX(-50%);
+                transition: $time-slow;
+                opacity: 0;
+                visibility: hidden;
+                pointer-events: none;
+                overflow: hidden;
+                background: $primary-cl;
+                border-radius: 5px;
+                border: 1px solid $primary-cl;
+
+                li {
+                  padding: 5px 25px;
+                  text-align: center;
+                  transition: $time;
+
+                  a {
+                    font-size: 16px;
+                    white-space: nowrap;
+                    color: $white-cl;
+                    font-family: 'primary-regular', sans-serif;
+                  }
+                }
+
+                li:not(:last-child) {
+                  border-bottom: 1px solid $white-cl;
+                }
+              }
+            }
+
+            > li:not(:last-child) {
+              margin-right: 50px;
+            }
+
+            > li:hover {
+              ul.sub_menu {
+                top: 100%;
+                opacity: 1;
+                visibility: visible;
+                pointer-events: auto;
+
+                &:hover {
+                  li:not(:hover) {
+                    opacity: .2;
+                  }
+                }
+              }
+            }
+
+            /*current menu*/
+            li.current-menu {
+              a {
+                font-family: 'primary-bold', sans-serif;
+                color: $primary-cl;
+              }
+            }
+
+            /*items has children*/
+            li.has-children {
+              padding-right: 15px;
+
+              &:before {
+                font-family: $font-icon;
+                font-weight: 600;
+                content: "\f078";
+                font-size: 12px;
+                position: absolute;
+                top: 55%;
+                right: 0;
+                line-height: 1;
+                transform: translateY(-50%);
+                transition: $time;
+              }
+            }
+
+            li.has-children:hover {
+              &:before {
+                color: $primary-cl;
+                transform: translateY(-50%) rotate(180deg);
+              }
+            }
+          }
+        }
+      }
+
+      /*social media*/
+      .social_media {
+        margin-left: 40px;
+        li {
+          &:not(:last-child) {
+            margin-right:15px;
+          }
+          a {
+            display: block;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(215,241,239,.2);
+            line-height: 40px;
+            text-align: center;
+            transition: $time-slow;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, .5);
+            &:hover {
+              background:$primary-cl;
+              color:$white-cl;
+              transform:translateY(-5px);
+            }
+          }
+        }
+      }
+
+    }
+  }
+}

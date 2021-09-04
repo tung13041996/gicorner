@@ -50,3 +50,16 @@
   }
 }
 
+/*Social media*/
+.social_media {
+  ul {
+    display:flex;
+    li {
+
+      &:not(:last-child) {
+        margin-right:25px;
+      }
+    }
+  }
+}
+
