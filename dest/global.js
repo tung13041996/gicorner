@@ -132,6 +132,114 @@ $(document).ready(function () {
         timeline.to(settings.wrapper.parent(), {autoAlpha: 0, duration: .3});
     }
 
+    /*mobile menu*/
+    let mobileMenuAccordion = function (options) {
+        // default options
+        let settings = $.extend({
+            parent_ul: '.nav__mobile ul.nav__mobile-section--menu', // select ul to init
+            active_one_at_once: true, // only active one sub menu at a time
+            active_child: true, // active sub menu if there is a current item inside of it (only for the first item)
+            active_child_class: '.current-menu-item', // class to detect current item
+            skip_from_level: 999, // skip sub menu from level
+            button_inner: '<i class="fas fa-chevron-down"></i>', // html inside the button
+            trigger_with_empty_link: true, // empty will also trigger sub menu
+            empty_link_selector: 'li.menu-no-click > a', // custom empty link selector
+        }, options);
+
+        // click hamburger button to show mobile menu
+        $('.hamburger_button').on('click', function(e) {
+            e.stopPropagation();
+            $('html').toggleClass("open-mobile-menu");
+            $(this).find(".nav-hamburger-line").toggleClass("active");
+        });
+
+        //click outside to close menu
+        let $mobileMenu = $("nav .nav__mobile-inner");
+        $('body').on('click', function(e) {
+               if (!$mobileMenu.is(e.target) && $mobileMenu.has(e.target).length === 0) {
+                   $('html').removeClass("open-mobile-menu");
+                   $(".nav-hamburger-line").removeClass("active");
+               }
+        })
+
+        // find all submenu using recursion
+        function recursionSubmenu($li_items, subLevel) {
+            if (subLevel <= settings.skip_from_level) {
+                $li_items.each(function () {
+                    let $li = $(this), $ul_inner = $li.children('ul');
+                    if ($ul_inner.length) {
+                        // set sub level
+                        $ul_inner.addClass("level-" + subLevel);
+                        $ul_inner.hide(); // sub menu is hidden by default
+
+                        // add button
+                        $li.addClass('has-sub-menu');
+                        $('<button class="open-sub-menu">' + settings.button_inner + '</button>').insertAfter($li.children('a'));
+
+                        // look for inner sub
+                        $ul_inner.children("li").each(function () {
+                            recursionSubmenu($(this), subLevel + 1);
+                        });
+                    }
+                });
+            }
+        }
+
+        // generate html
+        $(settings.parent_ul).each(function () {
+            $(this).addClass("level-1");
+            recursionSubmenu($(this).children("li"), 2);
+        });
+
+        // click dropdown button
+        let $buttons = $(settings.parent_ul).find('button.open-sub-menu');
+        $buttons.click(function () {
+            let $this = $(this),
+                $this_li_parent = $this.closest('li.has-sub-menu'),
+                $this_submenu = $this_li_parent.children('ul');
+
+            if (settings.active_one_at_once) {
+                // close all other active items (in the same level)
+                let $this_level_ul_parent = $this_li_parent.closest("ul"),
+                    $opening_li = $this_level_ul_parent.children("li.has-sub-menu.active:not(#" + $this_li_parent.attr("id") + ")"),
+                    $opening_button = $opening_li.children('button.open-sub-menu.active');
+
+                if ($opening_li.length && !$this.hasClass("active")) {
+                    $opening_button.removeClass('active');
+                    $opening_li.removeClass('active');
+                    $opening_li.children('ul').slideUp();
+                }
+            }
+
+            // toggle this
+            $this_li_parent.toggleClass('active');
+            $this.toggleClass('active');
+            $this_submenu.slideToggle();
+        });
+
+        // show sub if there is a current item inside (only for the first item)
+        if (settings.active_child) {
+            let $current_item = $(settings.parent_ul).find(settings.active_child_class).eq(0),
+                $this_li_parent;
+            if ($current_item.length) {
+                $this_li_parent = $current_item.parents("li.has-sub-menu");
+                $this_li_parent.each(function () {
+                    $(this).children('button.open-sub-menu').trigger('click');
+                });
+            }
+        }
+
+        // set trigger on empty link
+        if (settings.trigger_with_empty_link) {
+            $(settings.parent_ul).find('a[href="#"]' + "," + settings.empty_link_selector).click(function (e) {
+                if ($(this).next('button.open-sub-menu').length) {
+                    e.preventDefault();
+                    $(this).next('button.open-sub-menu').trigger('click');
+                }
+            });
+        }
+    };
+
 
     // init function
     mouseMove();
@@ -143,4 +251,5 @@ $(document).ready(function () {
         lineStagger: .02,
         lineDuration: .4
     })
+    mobileMenuAccordion();
 });

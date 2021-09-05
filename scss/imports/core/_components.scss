@@ -3,12 +3,12 @@
   &__round {
     width:15px; height:15px;
     border-radius:50%; border:1px solid #ccc;
-    position:absolute; top:0; left:0; z-index:10; pointer-events:none;
+    position:absolute; top:0; left:0; z-index:100; pointer-events:none;
   }
   &__point {
     width:8px; height:8px;
     border-radius:50%; background:#7a7a7a;
-    position:absolute; top:0; left:0; z-index:11; pointer-events:none;
+    position:absolute; top:0; left:0; z-index:100; pointer-events:none;
     mix-blend-mode:difference;
   }
 
@@ -42,9 +42,14 @@
 }
 
 /*loading page*/
+.main-wrapper {
+  width:100%;
+  overflow:hidden;
+  z-index:99;
+}
 .line-animation {
   position:fixed; top:0; left:0;
-  width:100%; height:100vh; z-index:11;
+  width:100%; height:100vh; z-index:102;
   &-wrapper {
     height:100%;
   }
@@ -55,9 +60,35 @@
   ul {
     display:flex;
     li {
-
       &:not(:last-child) {
         margin-right:25px;
+      }
+      a {
+        display: block;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: rgba(215,241,239,.2);
+        line-height: 40px;
+        text-align: center;
+        transition: $time-slow;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, .5);
+        &:hover {
+          background:$primary-cl;
+          color:$white-cl;
+          transform:translateY(-5px);
+        }
+      }
+    }
+  }
+
+  /*responsive*/
+  @include tablet {
+    ul li a {
+      background:$primary-cl;
+      color:$white-cl;
+      &:hover {
+        transform:translateY(0);
       }
     }
   }

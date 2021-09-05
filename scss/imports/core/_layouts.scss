@@ -28,6 +28,12 @@ body {
         color:$text-cl;
     }
 
+    button {
+        border:none;
+        background:transparent;
+        padding:0;
+    }
+
     /* hide/show element */
     .hidden {display:none;}
     .show {display:block;}
@@ -61,6 +67,12 @@ body {
         .show-small-desktop {display:block;}
     }
     @include horizontal-tablet {
+        /*general*/
+        cursor:auto;
+        a, button {
+            cursor:pointer;
+        }
+
         /*size*/
         h1, .heading_h1 {font-size:42px;}
         h2, .heading_h2 {font-size:35px;}
@@ -138,7 +150,6 @@ body {
     }
 
 }
-
 /*!
  * Font Awesome Free 5.14.0 by @fontawesome - https://fontawesome.com
  * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
