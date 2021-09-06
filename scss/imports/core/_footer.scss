@@ -1,1 +1,50 @@
-// css footer
+footer {
+  background: $white-cl;
+  text-align: center;
+  padding: 50px 0 30px;
+  box-shadow: 0 0 10px rgba(112, 112, 112, .1);
+
+  .footer-logo-slogan {
+    max-width: 600px;
+    margin: 0 auto 30px;
+  }
+
+  .footer-logo {
+    margin-bottom: 10px;
+
+    img {
+      height: 100px;
+    }
+  }
+
+  .footer-slogan {
+    font-family: 'title', sans-serif;
+    font-size: 30px;
+    line-height: 1.2;
+  }
+
+  .footer-social-media {
+    margin-bottom: 40px;
+
+    ul {
+      justify-content: center;
+    }
+  }
+
+  /*copyright*/
+  .copyright {
+    padding-top: 35px;
+    border-top: 1px dashed rgba(112, 112, 112, .3);
+  }
+
+  /*responsive*/
+  @include horizontal-tablet {
+    padding-top: 40px;
+    .footer-logo img {
+      height: 80px;
+    }
+    .footer-slogan {
+      font-size: 25px;
+    }
+  }
+}
