@@ -1,85 +1,77 @@
 /* FONT FACE - font-display: fallback; */
 /*Font primary - for text*/
 @font-face {
-    font-family: 'primary-regular';
-    src: url('../fonts/subset-Sarabun-Regular.woff2') format('woff2'),
-    url('../fonts/subset-Sarabun-Regular.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-display: fallback;
+    font-family:"primary-regular";
+    src:url("../fonts/subset-Sarabun-Regular.woff2") format("woff2"),
+    url("../fonts/subset-Sarabun-Regular.woff") format("woff");
+    font-weight:normal;
+    font-style:normal;
+    font-display:fallback;
 }
 @font-face {
-    font-family: 'primary-medium';
-    src: url('../fonts/subset-Sarabun-Medium.woff2') format('woff2'),
-    url('../fonts/subset-Sarabun-Medium.woff') format('woff');
-    font-weight: 500;
-    font-style: normal;
-    font-display: fallback;
+    font-family:"primary-medium";
+    src:url("../fonts/subset-Sarabun-Medium.woff2") format("woff2"),
+    url("../fonts/subset-Sarabun-Medium.woff") format("woff");
+    font-weight:500;
+    font-style:normal;
+    font-display:fallback;
 }
 @font-face {
-    font-family: 'primary-semibold';
-    src: url('../fonts/subset-Sarabun-SemiBold.woff2') format('woff2'),
-    url('../fonts/subset-Sarabun-SemiBold.woff') format('woff');
-    font-weight: 600;
-    font-style: normal;
-    font-display: fallback;
+    font-family:"primary-semibold";
+    src:url("../fonts/subset-Sarabun-SemiBold.woff2") format("woff2"),
+    url("../fonts/subset-Sarabun-SemiBold.woff") format("woff");
+    font-weight:600;
+    font-style:normal;
+    font-display:fallback;
 }
 @font-face {
-    font-family: 'primary-bold';
-    src: url('../fonts/subset-Sarabun-Bold.woff2') format('woff2'),
-    url('../fonts/subset-Sarabun-Bold.woff') format('woff');
-    font-weight: bold;
-    font-style: normal;
-    font-display: fallback;
+    font-family:"primary-bold";
+    src:url("../fonts/subset-Sarabun-Bold.woff2") format("woff2"),
+    url("../fonts/subset-Sarabun-Bold.woff") format("woff");
+    font-weight:bold;
+    font-style:normal;
+    font-display:fallback;
 }
 @font-face {
-    font-family: 'primary-italic';
-    src: url('../fonts/subset-Sarabun-Italic.woff2') format('woff2'),
-    url('../fonts/subset-Sarabun-Italic.woff') format('woff');
-    font-weight: normal;
-    font-style: italic;
-    font-display: swap;
+    font-family:"primary-italic";
+    src:url("../fonts/subset-Sarabun-Italic.woff2") format("woff2"),
+    url("../fonts/subset-Sarabun-Italic.woff") format("woff");
+    font-weight:normal;
+    font-style:italic;
+    font-display:swap;
 }
 
 /*Font secondary - for title*/
 @font-face {
-    font-family: 'secondary-regular';
-    src: url('../fonts/subset-PlayfairDisplay-Regular.woff2') format('woff2'),
-    url('../fonts/subset-PlayfairDisplay-Regular.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-display: fallback;
+    font-family:"secondary-regular";
+    src:url("../fonts/subset-Domine-Regular.woff2") format("woff2"),
+    url("../fonts/subset-Domine-Regular.woff") format("woff");
+    font-weight:normal;
+    font-style:normal;
+    font-display:fallback;
 }
 @font-face {
-    font-family: 'secondary-medium';
-    src: url('../fonts/subset-PlayfairDisplay-Medium.woff2') format('woff2'),
-    url('../fonts/subset-PlayfairDisplay-Medium.woff') format('woff');
-    font-weight: 500;
-    font-style: normal;
-    font-display: fallback;
+    font-family:"secondary-medium";
+    src:url("../fonts/subset-Domine-Medium.woff2") format("woff2"),
+    url("../fonts/subset-Domine-Medium.woff") format("woff");
+    font-weight:500;
+    font-style:normal;
+    font-display:fallback;
 }
 @font-face {
-    font-family: 'secondary-bold';
-    src: url('../fonts/subset-PlayfairDisplay-Bold.woff2') format('woff2'),
-    url('../fonts/subset-PlayfairDisplay-Bold.woff') format('woff');
-    font-weight: bold;
-    font-style: normal;
-    font-display: fallback;
+    font-family:"secondary-bold";
+    src:url("../fonts/subset-Domine-Bold.woff2") format("woff2"),
+    url("../fonts/subset-Domine-Bold.woff") format("woff");
+    font-weight:bold;
+    font-style:normal;
+    font-display:fallback;
 }
 @font-face {
-    font-family: 'secondary-italic';
-    src: url('../fonts/subset-PlayfairDisplay-Italic.woff2') format('woff2'),
-    url('../fonts/subset-PlayfairDisplay-Italic.woff') format('woff');
-    font-weight: normal;
-    font-style: italic;
-    font-display: swap;
-}
-@font-face {
-    font-family: 'title';
-    src: url('../fonts/subset-Cookie-Regular.woff2') format('woff2'),
-    url('../fonts/subset-Cookie-Regular.woff') format('woff');
-    font-weight: normal;
-    font-style: italic;
-    font-display: swap;
+    font-family:"title";
+    src:url("../fonts/subset-Cookie-Regular.woff2") format("woff2"),
+    url("../fonts/subset-Cookie-Regular.woff") format("woff");
+    font-weight:normal;
+    font-style:italic;
+    font-display:swap;
 }
 
