@@ -12,8 +12,14 @@ footer {
   .footer-logo {
     margin-bottom: 10px;
 
-    img {
-      height: 100px;
+    &-link {
+      display: block;
+      width: fit-content;
+      margin: auto;
+
+      img {
+        height: 100px;
+      }
     }
   }
 
