@@ -33,6 +33,34 @@
       padding:0 40px;
       text-align:center;
       color:#fff;
+      &-type {
+        font-family:'title', sans-serif;
+        font-size:30px;
+      }
+      &-description {
+        margin-bottom:30px;
+      }
+    }
+  }
+
+  /*Responsive*/
+  @include desktop {
+    &__item {
+      &-thumbnail {
+        height:calc(100vh - 65px - 55px);
+      }
+      &-content {
+        padding:0 20px;
+        max-width:740px;
+      }
+    }
+  }
+
+  @include horizontal-tablet {
+    &__item {
+      &-content {
+        max-width:600px;
+      }
     }
   }
 }
