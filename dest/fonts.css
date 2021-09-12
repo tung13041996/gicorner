@@ -43,25 +43,25 @@
 
 /*Font secondary - for title*/
 @font-face {
-    font-family:"secondary-regular";
-    src:url("../fonts/subset-Domine-Regular.woff2") format("woff2"),
-    url("../fonts/subset-Domine-Regular.woff") format("woff");
+    font-family:"secondary-medium";
+    src:url("../fonts/subset-Glory-Medium.woff2") format("woff2"),
+    url("../fonts/subset-Glory-Medium.woff") format("woff");
     font-weight:normal;
     font-style:normal;
     font-display:fallback;
 }
 @font-face {
-    font-family:"secondary-medium";
-    src:url("../fonts/subset-Domine-Medium.woff2") format("woff2"),
-    url("../fonts/subset-Domine-Medium.woff") format("woff");
+    font-family:"secondary-semibold";
+    src:url("../fonts/subset-Glory-SemiBold.woff2") format("woff2"),
+    url("../fonts/subset-Glory-SemiBold.woff") format("woff");
     font-weight:500;
     font-style:normal;
     font-display:fallback;
 }
 @font-face {
     font-family:"secondary-bold";
-    src:url("../fonts/subset-Domine-Bold.woff2") format("woff2"),
-    url("../fonts/subset-Domine-Bold.woff") format("woff");
+    src:url("../fonts/subset-Glory-Bold.woff2") format("woff2"),
+    url("../fonts/subset-Glory-Bold.woff") format("woff");
     font-weight:bold;
     font-style:normal;
     font-display:fallback;
