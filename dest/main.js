@@ -3,7 +3,11 @@ $(document).ready(function() {
         cellAlign: 'left',
         contain: true,
         wrapAround: true,
-        selectedAttraction: 0.02,
-        friction: 0.4
+        selectedAttraction: 0.015,
+        friction: 0.42,
+        autoPlay: 4500,
+        pauseAutoPlayOnHover: false,
+        prevNextButtons: false,
+        pageDots: false
     });
 });
