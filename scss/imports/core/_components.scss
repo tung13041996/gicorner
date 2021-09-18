@@ -94,3 +94,63 @@
   }
 }
 
+/*banner*/
+.site-banner {
+  position:relative;
+  &__image {
+    height:400px;
+    &:before {
+      content:""; background:rgba(0,0,0,.6);
+      position:absolute; top:0; left:0; bottom:0; right:0;
+    }
+  }
+  &__title {
+    @include mid(false);
+    width:100%;
+    &-text {
+      text-align:center;
+      margin-bottom:0;
+      letter-spacing:.2em;
+      @include text(80px, $font-style, normal, $white-cl, none);
+    }
+  }
+
+  @include desktop {
+    &__image {
+      height:350px;
+    }
+    &__title-text {
+      font-size:65px;
+    }
+  }
+  @include horizontal-tablet {
+    &__image {
+      height:300px;
+    }
+    &__title-text {
+      font-size:60px;
+    }
+  }
+  @include tablet {
+    &__image {
+      height:275px;
+    }
+    &__title-text {
+      font-size:50px;
+    }
+  }
+  @include mobile {
+    &__title-text {
+      font-size:45px;
+      letter-spacing:.1em;
+    }
+  }
+}
+
+/*parallax*/
+[data-parallax] {
+  background-repeat:no-repeat; background-size:cover;
+  background-position:50% 50%;
+}
+[data-parallax] img {opacity:0;}
+

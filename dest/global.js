@@ -240,6 +240,60 @@ $(document).ready(function () {
         }
     };
 
+    /*parallax image*/
+    let backgroundParallax = function() {
+        $("[data-parallax]").each(function(){
+            // update source image
+            let $image = $(this).find("img"),
+                $srcImage = $image.attr("src");
+            $(this).css("background-image", "url(" + $srcImage + ")");
+
+
+
+            const $target = $(this);
+
+            // update when scrolling
+            window.addEventListener("scroll", () => {
+                // max distance is where the target disappear from viewport, counting from the middle
+                const maxDistance = window.innerHeight * 0.5 + $target.height() * 0.5;
+
+                // offset to the middle of target
+                const targetOffset = $target.offset().top + $target.height() * 0.5;
+
+                // position where the image has the best display
+                let windowPosition = window.innerHeight * 0.5;
+
+                // if missing top spacing
+                if(targetOffset <= maxDistance){
+                    windowPosition = targetOffset;
+                }
+
+                // if missing bottom spacing
+                const offsetBottom = $(document).height() - $target.offset().top - $target.height();
+                const targetBottomOffset = offsetBottom + $target.height() * 0.5;
+                if(targetBottomOffset <= maxDistance){
+                    windowPosition = window.innerHeight - targetBottomOffset;
+                }
+
+                // offset to the window position
+                const windowOffset = window.scrollY + windowPosition;
+
+                // distance from middle of target to middle of viewport
+                const distance = targetOffset - windowOffset;
+
+                // only run parallax when target is inside viewport
+                if(distance > -maxDistance && distance < maxDistance){
+                    // we already have 50%, so we need another 50% to fill up 100%
+                    // the other 50% is vary base on the distance
+                    const parallaxValue = 50 + (distance / maxDistance) * 50;
+
+                    // update background position
+                    $target.css("backgroundPosition", `center ${parallaxValue}%`);
+                }
+            });
+        });
+    }
+
 
     // init function
     mouseMove();
@@ -252,4 +306,5 @@ $(document).ready(function () {
         lineDuration: .4
     })
     mobileMenuAccordion();
+    backgroundParallax();
 });
