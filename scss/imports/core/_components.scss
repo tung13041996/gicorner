@@ -40,6 +40,38 @@
     width:100%; left:0;
   }
 }
+[class*="button_secondary"] {
+  position:relative;
+  padding-bottom:5px;
+  transition:$time;
+  &:before, &:after {
+    content:"";
+    display:block;
+    height:2px;
+    position:absolute;
+    bottom:0;
+  }
+  &:before {
+    width:100%;
+    background:$text-cl;
+    z-index:1;
+    left:0;
+  }
+  &:after {
+    z-index:2;
+    width:0;
+    background:$primary-cl;
+    right:0;
+    transition:$time-slow;
+  }
+  &:hover {
+    color:$primary-cl;
+    &:after {
+      width:100%;
+      left:0;
+    }
+  }
+}
 
 /*loading page*/
 .main-wrapper {
@@ -152,5 +184,5 @@
   background-repeat:no-repeat; background-size:cover;
   background-position:50% 50%;
 }
-[data-parallax] img {opacity:0;}
+[data-parallax] img {opacity:0; pointer-events:none;}
 

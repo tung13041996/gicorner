@@ -1,0 +1,120 @@
+.team {
+  @keyframes animate-rotate {
+    0% {transform:translate(-50%, -50%) rotate(0);}
+    100% {transform:translate(-50%, -50%) rotate(360deg);}
+  }
+  &__section {
+    background: #334393;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    overflow:hidden;
+    padding:40px;
+
+    /*heading*/
+    &-heading {
+      margin-bottom:35px;
+      color:$white-cl;
+      text-align:center;
+      &-title h2 {
+        font-family:"title", sans-serif;
+        font-size:60px;
+        letter-spacing:.1em;
+        line-height:1;
+        margin-bottom:5px;
+      }
+      &-content {
+        max-width:950px; margin:auto;
+      }
+    }
+
+    &-inner {
+      margin:-20px;
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+    }
+    &-item {
+      padding:20px;
+      width:33.33%;
+      &__wrapper {
+        padding:40px 20px;
+        background:#1e2b6e;
+        color:$white-cl;
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        justify-content:space-between;
+        border-radius:10px;
+        overflow:hidden;
+        position:relative;
+        &:before {
+          content:"";
+          display:block;
+          width:50%;
+          height:150%;
+          background:linear-gradient(#00ffff, #005aff);
+          position:absolute;
+          top:50%;
+          left:50%;
+          transform:translate(-50%, -50%) rotate(31deg);
+          z-index:0;
+        }
+        &:after {
+          content:"";
+          display:block;
+          position:absolute;
+          inset:3px;
+          background:#334393;
+          border-radius:8px;
+          z-index:1
+        ;
+        }
+      }
+      &__top {
+        text-align:center;
+        position:relative;
+        z-index:5;
+      }
+      &__image {
+        width:200px;
+        height:200px;
+        border-radius:50%;
+        margin:0 auto 20px;
+      }
+      &__excerpt {
+        margin-bottom:10px;
+      }
+      &__info {
+        margin-bottom:10px;
+        &-name {
+          font-weight:600;
+          font-size:18px;
+        }
+        &-position {
+          font-size:14px;
+          font-weight:600;
+        }
+      }
+      &__button-more {
+        position:relative;
+        z-index:5;
+        a.button_secondary {
+          color:$white-cl;
+          &:before {
+            background:$white-cl;
+          }
+        }
+      }
+      &__popup {
+        position:fixed;
+        top:0;
+        left:0;
+        bottom:0;
+        right:0;
+        overflow:hidden;
+        opacity:0;
+        pointer-events:none;
+        transition:$time;
+      }
+    }
+  }
+}
